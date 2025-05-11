@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Sākums{% endblock %}
+{% block content %}
+<div class="main-header-container">
+    <h1 class="main-header">Manas TOP 5 Ogas!</h1>
+    <p class="main-paragraph">Piecas ogas, kas katrai vasarai piešķir garšu un krāsu.</p>
+</div>
+<div class="berries">
+    <div class="berry-item">
+        <img src="{{ url_for('static', filename='images/berries/strawberries.jpg') }}" alt="Strawberries" width="300" height="225">
+        <div class="berry-text">Zemenes</div>
+    </div>
+    <div class="berry-item">
+        <img src="{{ url_for('static', filename='images/berries/grapes.jpg') }}" alt="Grapes" width="300" height="225">
+        <div class="berry-text">Vīnogas</div>
+    </div>
+    <div class="berry-item">
+        <img src="{{ url_for('static', filename='images/berries/raspberries.jpg') }}" alt="Raspberries" width="300" height="225">
+        <div class="berry-text">Avenes</div>
+    </div>
+    <div class="berry-item">
+        <img src="{{ url_for('static', filename='images/berries/cherries.jpg') }}" alt="Cherries" width="300" height="225">
+        <div class="berry-text">Ķirši</div>
+    </div>
+    <div class="berry-item">
+        <img src="{{ url_for('static', filename='images/berries/blackcurrants.jpg') }}" alt="Blackcurrants" width="300" height="225">
+        <div class="berry-text">Upenes</div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}{{ Variety.name }} - Šķirnes{% endblock %}
+{% block content %}
+
+<div class="variety-detail">
+    <img src="{{ url_for('static', filename='images/varieties/' ~ Variety['image']) }}" alt="{{ Variety['name'] }}">
+    <h2>{{ Variety.name }}</h2>
+    <p>{{ Variety.description if 'description' in Variety.keys() else 'No description available.' }}</p>
+</div>
+
+<a href="{{ url_for('edit_variety', variety_id=Variety['id']) }}">Rediģēt šķirni</a>
+
+<form method="post" action="{{ url_for('delete_variety', variety_id=Variety['id']) }}" onsubmit="return confirm('Vai tiešām vēlaties dzēst šo šķirni?');" class="delete-form">
+    <button type="submit" class="btn-delete">Dzēst šķirni</button>
+</form>
+
+{% endblock %}

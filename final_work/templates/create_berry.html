@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Pievieno jaunu ogu{% endblock %}
+{% block content %}
+
+<h2 class="header-centered">Pievieno jaunu ogu!</h2>
+
+<div class="form-container">
+<form method="post" enctype="multipart/form-data" class="berry-form">
+    <label for="name">Nosaukums:</label><br>
+    <input class="input-text" type="text" id="name" name="name" required><br><br>
+
+    <label for="image">Attēls (augšupielādējiet failu):</label><br>
+    <input class="input-file" type="file" id="image" name="image" required><br><br>
+
+    <label for="varieties">Šķirnes (ierakstiet nosaukumus, atdaliet ar komatiem):</label><br>
+    <input class="input-text" type="text" id="varieties" name="varieties"><br><br>
+
+    <label for="regions">Reģioni (ierakstiet nosaukumus, atdaliet ar komatiem):</label><br>
+    <input class="input-text" type="text" id="regions" name="regions"><br><br>
+
+    <input class="btn-submit" type="submit" value="Pievienot">
+</form>
+<br>
+<a href="{{ url_for('berry') }}" class="back-link">← Atpakaļ uz ogas lapu</a>
+</div>
+
+{% endblock %}

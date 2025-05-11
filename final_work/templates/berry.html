@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Ogas{% endblock %}
+{% block content %}
+
+<h2 class="header-centered">Ogas</h2>
+<div class="berries-list" style="justify-content: center;">
+    {% for berry in Varieties %}
+    <a class="berries-item" href="{{ url_for('berries_show', berry_id=berry['id']) }}">
+        <img class="berry-image" src="{{ url_for('static', filename='images/berries/' + berry['image']) }}" alt="{{ berry['name'] }}">
+        <div class="berry-name">{{ berry['name'] }}</div>
+    </a>
+    {% endfor %}
+</div>
+
+{% endblock %}

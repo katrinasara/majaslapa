@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Rediģēt šķirni{% endblock %}
+{% block content %}
+
+<h2 class="header-centered">Rediģēt šķirni</h2>
+
+<div class="form-container">
+<form method="post" enctype="multipart/form-data" class="berry-form">
+    <label for="name">Nosaukums:</label><br>
+    <input class="input-text" type="text" id="name" name="name" value="{{ variety['name'] }}" required><br><br>
+
+    <label for="description">Apraksts:</label><br>
+    <textarea class="input-text" id="description" name="description">{{ variety['description'] }}</textarea><br><br>
+
+    <label for="image">Attēls (augšupielādējiet failu):</label><br>
+    <input class="input-file" type="file" id="image" name="image"><br><br>
+
+    <label for="berry_id">Pieder pie ogas:</label><br>
+    <select class="input-select" id="berry_id" name="berry_id" required>
+        {% for berry in berries %}
+        <option value="{{ berry['id'] }}" {% if berry['id'] == variety['berry_id'] %}selected{% endif %}>{{ berry['name'] }}</option>
+        {% endfor %}
+    </select><br><br>
+
+    <input class="btn-submit" type="submit" value="Saglabāt">
+</form>
+</div>
+
+<br>
+<a href="{{ url_for('variety_detail', variety_id=variety['id']) }}">← Atpakaļ uz šķirnes lapu</a>
+
+{% endblock %}
